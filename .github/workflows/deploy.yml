@@ -1,0 +1,38 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    strategy:
+      max-parallel: 1
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.12
+
+      - run: |
+          function main {
+            build
+            deploy
+          }
+
+          function build {
+            npm ci
+            npm run build
+          }
+
+          function deploy {
+            git checkout -b gh-pages HEAD
+            git add docs/
+            git -c user.name="Github Actions" -c user.email="<>" commit -m "Build page from ${{ github.ref }}"
+            git push --force origin HEAD:gh-pages
+          }
+
+          main
