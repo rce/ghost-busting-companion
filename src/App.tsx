@@ -14,7 +14,7 @@ type Ghost = { name: string, evidence: Evidence[] }
 const ghosts: Ghost[] = [
   { name: "henki", evidence: ["SPIRIT_BOX", "FINGERPRINTS", "GHOSTWRITING"] },
   { name: "haamu", evidence: ["FINGERPRINTS", "FREEZING", "SPIRIT_BOX"] },
-  { name: "kummitus", evidence: ["EMF_FIVE", "GHOSTWRITING", "FREEZING"] },
+  { name: "kummitus", evidence: ["EMF_FIVE", "GHOSTORB", "FREEZING"] },
   { name: "räyhähenki", evidence: ["SPIRIT_BOX", "FINGERPRINTS", "GHOSTORB"] },
   { name: "banshee", evidence: ["EMF_FIVE", "FINGERPRINTS", "FREEZING"] },
   { name: "jinni", evidence: ["SPIRIT_BOX", "GHOSTORB", "EMF_FIVE"] },
