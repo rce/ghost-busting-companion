@@ -38,7 +38,7 @@ function App() {
     const without = foundEvidence.filter(_ => _ != e)
     if (foundEvidence.includes(e)) {
       setEvidence(without)
-    } else {
+    } else if (possibleRemainingClues.includes(e)) {
       setEvidence([e].concat(without))
     }
   }
@@ -55,20 +55,16 @@ function App() {
       .filter((e: Evidence) => !isFound(e))
 
   return (
-    <div className="main-content">
-      <h1>Found evidence</h1>
-      <ul>
-        {ALL_EVIDENCE.map(e =>
-          <li onClick={() => toggleEvidence(e)}>
-            <input type="checkbox" checked={foundEvidence.includes(e)}/> {e}
-          </li>)}
-      </ul>
-
-      <h1>Possible remaining evidence</h1>
-      <pre>{JSON.stringify(possibleRemainingClues, null, 2)}</pre>
-
-      <h1>Possible ghost types</h1>
-      <pre>{JSON.stringify(possibleGhosts, null, 2)}</pre>
+    <div className="evidence-grid">
+      {ALL_EVIDENCE.map(e => {
+        const classNames = ["evidence-grid--evidence"]
+        if (foundEvidence.includes(e)) {
+          classNames.push("found")
+        } else if (!possibleRemainingClues.includes(e)) {
+          classNames.push("impossible")
+        }
+        return <div className={classNames.join(" ")} onClick={() => toggleEvidence(e)}>{e}</div>
+      })}
     </div>
   )
 }

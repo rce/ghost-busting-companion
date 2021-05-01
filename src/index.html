@@ -2,6 +2,35 @@
 <html>
   <head>
     <title>Phasmophobia</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .evidence-grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+      }
+
+      .evidence-grid--evidence {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 33vh;
+
+        font-size: 3em;
+        background-color: yellow;
+      }
+
+      .evidence-grid--evidence.found {
+        background-color: green;
+      }
+
+      .evidence-grid--evidence.impossible {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
