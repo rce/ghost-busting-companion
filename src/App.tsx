@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from "react"
 import {render} from "react-dom"
+import "./VerticalHeightHack.ts"
 
 type Evidence
   = "EMF_FIVE"
