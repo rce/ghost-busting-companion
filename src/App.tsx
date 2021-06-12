@@ -25,6 +25,8 @@ const ghosts: Ghost[] = [
   { name: "demoni", evidence: ["SPIRIT_BOX", "GHOSTWRITING", "FREEZING"] },
   { name: "yurei", evidence: ["GHOSTORB", "GHOSTWRITING", "FREEZING"] },
   { name: "oni", evidence: ["EMF_FIVE", "SPIRIT_BOX", "GHOSTWRITING"] },
+  { name: "yokai", evidence: ["SPIRIT_BOX", "GHOSTORB", "GHOSTWRITING"] },
+  { name: "hantu", evidence: ["FINGERPRINTS", "GHOSTORB", "GHOSTWRITING"] },
 ]
 
 function flatten<T>(lists: T[][]): T[] { return ([] as T[]).concat(...lists) }
